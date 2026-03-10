@@ -22,7 +22,7 @@ public class CategoryController {
 
     private final CategoryService categoryService;
 
-    @PostMapping("/save")
+    @PostMapping()
     public ResponseEntity<CategoryDTO> saveCategory(@RequestBody CategoryDTO categoryDTO){
         CategoryDTO savedCategory = categoryService.saveCategory(categoryDTO);
         return ResponseEntity.status(HttpStatus.OK).body(savedCategory);

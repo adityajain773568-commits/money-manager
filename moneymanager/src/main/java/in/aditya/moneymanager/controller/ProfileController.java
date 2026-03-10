@@ -47,6 +47,11 @@ public class ProfileController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of("error" , e.getMessage()));
         }
     }
+    @GetMapping("/profile")
+    public ResponseEntity<ProfileDTO> getPublicProfile() {
+        ProfileDTO profileDTO = profileService.getPublicProfile(null);
+        return ResponseEntity.ok(profileDTO);
+    }
 
     @GetMapping("/test")
     public String test(){
